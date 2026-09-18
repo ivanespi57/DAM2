@@ -1,4 +1,4 @@
-nombre;edad;nota
-Ana;20;8.5
-Carlos;21;6.75
-María;19;9.25
+"nombre","apellido","edad","nota"
+"Ivan","Espi","21","6.7"
+"Lucia","Ferrandis","21","7.3"
+"Ismael","Espi","17","9.8"
