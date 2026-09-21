@@ -1,10 +1,13 @@
 def main():
-    num1 = int(input("Escriba el primer número: "))
-    num2 = int(input("Escriba el segundo número: "))
-    
-    res = (num1 + num2) / 2
-    
-    print(res)
+    num = [4, 17, -3, 9, 12]
+
+    max = num[0]
+    for numero in num:
+        if numero > max:
+            max = numero
+
+    print(f"El mayor es {max}")
+
 
 if __name__ == "__main__":
     main()
