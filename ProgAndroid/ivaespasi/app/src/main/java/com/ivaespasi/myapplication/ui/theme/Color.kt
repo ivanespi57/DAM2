@@ -1,4 +1,4 @@
-package com.example.ivaespasi.ui.theme
+package com.ivaespasi.myapplication.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

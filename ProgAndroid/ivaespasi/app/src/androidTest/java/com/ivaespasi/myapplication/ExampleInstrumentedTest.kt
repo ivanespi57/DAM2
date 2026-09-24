@@ -1,4 +1,4 @@
-package com.example.ivaespasi
+package com.ivaespasi.myapplication
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

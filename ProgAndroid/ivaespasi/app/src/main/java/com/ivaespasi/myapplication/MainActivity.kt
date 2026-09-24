@@ -1,21 +1,17 @@
-package com.example.ivaespasi
+package com.ivaespasi.myapplication
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.ivaespasi.ui.theme.IvaespasiTheme
-import components.layouts.MiBox
-import components.layouts.MiColumn
-import components.layouts.MiLayoutCombinado
-import components.layouts.MiRow
+import com.ivaespasi.myapplication.ui.theme.IvaespasiTheme
+import components.layouts.EjerConstraintLayout
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +27,8 @@ class MainActivity : ComponentActivity() {
                     // MiBox()
                     // MiColumn()
                     // MiRow(Modifier.fillMaxSize())
-                    MiLayoutCombinado(Modifier.fillMaxSize())
+                    //MiLayoutCombinado(Modifier.fillMaxSize())
+                    EjerConstraintLayout(Modifier.fillMaxSize())
                 }
             }
         }

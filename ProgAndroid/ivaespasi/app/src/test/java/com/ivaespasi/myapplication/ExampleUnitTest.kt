@@ -1,4 +1,4 @@
-package com.example.ivaespasi
+package com.ivaespasi.myapplication
 
 import org.junit.Test
 
