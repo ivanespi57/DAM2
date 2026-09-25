@@ -18,7 +18,8 @@ public class Ejer8 {
 
         Document documento = builder.parse(new File("libros.xml"));
         NodeList libros = documento.getElementsByTagName("libro");
-        int cont = 0;
+        int cantidadLibros = libros.getLength();
+        
 
         for (int i = 0; i < libros.getLength(); i++){
             Node node = libros.item(i);
@@ -26,17 +27,23 @@ public class Ejer8 {
                 Element libroElem = (Element) node;
                 NodeList propiedadesLibro = libroElem.getChildNodes();
                 
-                Node titulo = propiedadesLibro.item(0);
-                Node autor = propiedadesLibro.item(1);
-                Node precio = propiedadesLibro.item(2);
+                for (int j = 0; j < propiedadesLibro.getLength(); j++){
+                    Node n = propiedadesLibro.item(j);
+                    if (n.getNodeType() == Node.ELEMENT_NODE){
+                        Element e = (Element) n;
+                        System.out.println(e.getNodeName()+": " + e.getTextContent());
+                    }
+                }
 
-                System.out.println(titulo.getNodeName() + ": " + titulo.getTextContent());
-                System.out.println(autor.getNodeName() + ": " + autor.getTextContent());
-                System.out.println(precio.getNodeName() + ": " + precio.getTextContent());
-                cont++;
+                //Opción 2: Sacar cada nodo del libro con la función GetElementByTagsName
+
+                // NodeList tituloLista = libroElem.getElementsByTagName("titulo");
+                // Element titulo = (Element) tituloLista.item(0);
+                // System.out.println(titulo.getNodeName() + ": " + titulo.getTextContent());
+                // etc
             }
         }
-        System.out.println("El número de libros es: " + cont);
+        System.out.println("El número de libros es: " + cantidadLibros);
     } catch (Exception e) {
         System.out.println("Error al leer el XML");
     }
