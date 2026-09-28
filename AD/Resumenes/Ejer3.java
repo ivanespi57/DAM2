@@ -19,9 +19,13 @@ public class Ejer3 {
             FileReader fr = new FileReader("incidencias.txt");
             BufferedReader lector = new BufferedReader(fr);
         ) {
-            // Cada linea leida es una incidencia ya registrada
-            while (lector.readLine() != null) {
-                contInc++;
+            String linea;
+            while ((linea = lector.readLine()) != null) {
+                // Solo contamos las lineas que tienen texto, asi una linea
+                // en blanco no altera el numero de incidencia
+                if (!linea.isEmpty()) {
+                    contInc++;
+                }
             }
         } catch (IOException e) {
             // Si el fichero todavia no existe (primera ejecucion), no
@@ -39,9 +43,17 @@ public class Ejer3 {
             FileWriter fw = new FileWriter("incidencias.txt", true);
             BufferedWriter escritor = new BufferedWriter(fw);
         ) {
+            // IMPORTANTE: el incidencias.txt del ejercicio NO termina con
+            // salto de linea. Si escribieramos directamente, la nueva
+            // incidencia quedaria pegada al final de la ultima
+            // ("...detenidoIncidencia 4: ..."). Por eso, si ya hay
+            // incidencias, saltamos de linea ANTES de escribir la nueva
+            // (en lugar de saltar despues, como en el Ejer2)
+            if (contInc > 0) {
+                escritor.newLine();
+            }
             // El numero de la nueva incidencia es el siguiente al contador
             escritor.write("Incidencia " + (contInc + 1) + ": " + descripcion);
-            escritor.newLine();
 
             System.out.println("Incidencia registrada correctamente.");
 

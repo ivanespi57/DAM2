@@ -9,9 +9,19 @@ public class Ejer6 {
         try (
             // FileWriter abre (o crea) alumnos.csv para escribir en el
             FileWriter fw = new FileWriter("alumnos.csv");
-            // CSVWriter, creado con su constructor simple, escribe por
-            // defecto los campos separados por ',' y entre comillas
-            CSVWriter escritor = new CSVWriter(fw)
+            // Usamos el constructor completo de CSVWriter para que el fichero
+            // quede como el ejemplo del enunciado (Ana,García,20,8.5):
+            //  - ','  -> caracter separador
+            //  - NO_QUOTE_CHARACTER -> no pone cada campo entre comillas
+            //    (con el constructor simple todos los campos irian entre "")
+            //  - los dos ultimos parametros son los valores por defecto
+            CSVWriter escritor = new CSVWriter(
+                fw,
+                ',',
+                CSVWriter.NO_QUOTE_CHARACTER,
+                CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                CSVWriter.DEFAULT_LINE_END
+            )
         ) {
             // Escribimos la linea de cabecera con el nombre de cada columna.
             // writeNext() recibe un array de Strings y escribe una linea completa
@@ -35,12 +45,10 @@ public class Ejer6 {
 
                 // Escribimos el registro completo del alumno en el CSV
                 escritor.writeNext(new String[]{nombre, apellido, edad, nota});
-                
-                // OJO para el examen: esta llamada extra consume una linea
-                // de entrada de mas en cada vuelta del bucle (aparte de las
-                // 4 que ya se han leido arriba), asi que en la practica
-                // "roba" la primera respuesta del siguiente alumno.
-                scanner.nextLine();
+
+                // (Aqui había un scanner.nextLine() de mas: como todos los
+                // datos ya se leen con nextLine(), no queda ningun salto de
+                // linea pendiente y esa llamada se comia la siguiente respuesta)
             }
         } catch (Exception e) {
             // Capturamos cualquier error al escribir el fichero
