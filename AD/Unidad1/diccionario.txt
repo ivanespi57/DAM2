@@ -1,0 +1,30 @@
+=== EXPRESION ===
+Significado: significado
+Categoría: ejemplo
+Ejemplo: categoria
+
+=== CRINGE ===
+Significado: Vergüenza ajena
+Categoría: Ese vídeo me da cringe
+Ejemplo: redes sociales
+
+=== RANDOM ===
+Significado: Algo inesperado o aleatorio
+Categoría: Ha sido una situación muy random
+Ejemplo: general
+
+=== SHIPPEAR ===
+Significado: Desear que dos personas sean pareja
+Categoría: Yo shippeo a esos dos
+Ejemplo: relaciones
+
+=== GHOSTEAR ===
+Significado: Dejar de responder o contactar con alguien
+Categoría: Me ha ghosteado después de hablar durante semanas
+Ejemplo: relaciones
+
+=== STALKEAR ===
+Significado: Revisar las redes sociales de otra persona
+Categoría: He stalkeado su Instagram
+Ejemplo: redes sociales
+
