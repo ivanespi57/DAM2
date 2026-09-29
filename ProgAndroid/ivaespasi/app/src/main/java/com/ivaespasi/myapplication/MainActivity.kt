@@ -5,11 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.ivaespasi.myapplication.components.layouts.Ejer1
+import com.ivaespasi.myapplication.components.layouts.Ejer3
 import com.ivaespasi.myapplication.ui.theme.IvaespasiTheme
 import components.layouts.EjerConstraintLayout
 
@@ -28,7 +31,9 @@ class MainActivity : ComponentActivity() {
                     // MiColumn()
                     // MiRow(Modifier.fillMaxSize())
                     //MiLayoutCombinado(Modifier.fillMaxSize())
-                    EjerConstraintLayout(Modifier.fillMaxSize())
+                    // EjerConstraintLayout(Modifier.fillMaxSize())
+                    // Ejer1(Modifier.fillMaxSize())
+                    Ejer3(Modifier.fillMaxSize().padding(innerPadding))
                 }
             }
         }
