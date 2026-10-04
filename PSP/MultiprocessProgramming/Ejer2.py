@@ -1,19 +1,17 @@
-import os, time
-
-def child():
-    for n in range(1,6):
-        print(n)
+import os
+import time
+ 
+ 
+def hijo():
+    for i in range(1, 6):
+        print(i)
         time.sleep(1)
     os._exit(0)
-
-def parent():
-    newpid = os.fork()
-
-    if newpid == 0:
-        child()
-    else:
-        os.wait()
-        print("El proceso hijo ha finalizado")
-        
-if __name__ == "__main__":
-    parent()
+ 
+ 
+newpid = os.fork()
+if newpid == 0:
+    hijo()
+else:
+    os.wait() 
+    print("The child process has finished.")

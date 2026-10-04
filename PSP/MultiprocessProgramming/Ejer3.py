@@ -1,19 +1,33 @@
-# fork only works in Windows
 from multiprocessing import Process
 import os
-def child():
-    print("Parent: %d, Child: %d\n" % (os.getppid(), os.getpid()))
-    os._exit(0)
-def parent():
-    while True:
-        p = Process(target=child)
+ 
+ 
+def hijo():
+    print("Child: %d, Parent: %d" % (os.getpid(), os.getppid()))
+ 
+ 
+def padre():
+    try:
+        total = int(input("¿Cuántos procesos hijos quieres crear? "))
+    except ValueError:
+        print("Debes introducir un número entero")
+        return
+ 
+    procesos = []
+    for i in range(total):
+        p = Process(target=hijo)
         p.start()
-        print("\nNew child created ", p.pid)
+        procesos.append(p)
+        if i < total - 1:
+            reply = input("Pulsa 'y' para crear otro proceso (otra tecla para parar): ")
+            if reply != 'y':
+                break
+ 
+    for p in procesos:
         p.join()
-        reply = input("Presiona 's' para continuar\n")
-
-        if reply != 's':
-            break
-
+    print("Todos los procesos hijos han terminado")
+ 
+ 
 if __name__ == '__main__':
-    parent()
+    padre()
+ 
