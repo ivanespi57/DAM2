@@ -7,51 +7,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.ivaespasi.myapplication.components.layouts.Ejer1
 import com.ivaespasi.myapplication.components.layouts.Ejer3
-import com.ivaespasi.myapplication.ui.theme.IvaespasiTheme
-import components.layouts.EjerConstraintLayout
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            IvaespasiTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    //Greeting(
-                      //  name = "Iván",
-                    //    modifier = Modifier.padding(innerPadding)
-                    //)
-                    // MiBox()
-                    // MiColumn()
-                    // MiRow(Modifier.fillMaxSize())
-                    //MiLayoutCombinado(Modifier.fillMaxSize())
-                    // EjerConstraintLayout(Modifier.fillMaxSize())
-                    // Ejer1(Modifier.fillMaxSize())
-                    Ejer3(Modifier.fillMaxSize().padding(innerPadding))
-                }
+            Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Ejer3(Modifier.padding(innerPadding))
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    IvaespasiTheme {
-        Greeting("Android")
     }
 }
