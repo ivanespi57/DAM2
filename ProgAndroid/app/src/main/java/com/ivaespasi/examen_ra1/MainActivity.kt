@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.ivaespasi.examen_ra1.ui.theme.Examen_ra1Theme
+import com.ivaespasi.examen_ra1.composable.layout.examen_ra1
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +21,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             Examen_ra1Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Iván",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    //Greeting(
+                    //    name = "Iván",
+                    //    modifier = Modifier.padding(innerPadding)
+                    //)
+                    examen_ra1(Modifier.padding(innerPadding))
                 }
             }
         }
