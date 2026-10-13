@@ -22,7 +22,7 @@ fun MiTextFieldPadre(modifier: Modifier){
     var usuario by rememberSaveable{mutableStateOf("Iván")}
     var mivalor by rememberSaveable { mutableStateOf("") }
     Column(modifier = modifier) {
-        //MiTextField(usu = usuario) {usuario = it}
+        MiTextField(usu = usuario) {usuario = it}
         MiSegundoTextField(valor = mivalor) {mivalor = it}
     }
 }
