@@ -1,0 +1,41 @@
+import java.sql.Statement;
+import java.util.Locale;
+import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class MySqlTest2 {
+
+    static Scanner teclado = new Scanner(System.in).useLocale(Locale.US);
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://192.168.3.175/tienda_completa";
+        String user = "ivan";
+        String pass = "ivan";
+
+        try (
+            Connection conexion = DriverManager.getConnection(url, user, pass);
+            Statement stmt = conexion.createStatement();
+        ){
+            System.out.println("Dime tu nombre para conocer tus datos");
+            String nombre = teclado.nextLine();
+    
+            String sql = "SELECT * FROM cliente WHERE nombre = '"+nombre+"'";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombreC = rs.getString("nombre");
+                String email = rs.getString("email");
+                String ciudad = rs.getString("ciudad");
+
+                System.out.println("ID: "+ id +"\n Nombre: "+ nombreC +"\n Email: "+ email + "\n Ciudad: "+ ciudad);
+            }
+            System.out.println("Conexión realizada correctamente");
+        } catch (SQLException e) {
+            System.out.println("Error al conectar con MySQL");
+        }
+    }
+}
+
