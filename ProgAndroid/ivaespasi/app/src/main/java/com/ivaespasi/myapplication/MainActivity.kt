@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat.enableEdgeToEdge
 import com.ivaespasi.myapplication.components.layouts.Ejer3
 import com.ivaespasi.myapplication.components.layouts.MiButton
+import com.ivaespasi.myapplication.components.layouts.MiCalculadora
 import com.ivaespasi.myapplication.components.layouts.MiState
 import com.ivaespasi.myapplication.components.layouts.MiText
 import com.ivaespasi.myapplication.components.layouts.MiTextField
@@ -27,7 +28,8 @@ class MainActivity : ComponentActivity() {
                 //MiState(Modifier.fillMaxSize().padding(innerPadding))
                 //MiText(Modifier.fillMaxSize().padding(innerPadding))
                 //MiTextFieldPadre(Modifier.fillMaxSize().padding(innerPadding))
-                MiButton(Modifier.fillMaxSize().padding(innerPadding))
+                //MiButton(Modifier.fillMaxSize().padding(innerPadding))
+                MiCalculadora(Modifier.fillMaxSize().padding(innerPadding))
             }
         }
     }
