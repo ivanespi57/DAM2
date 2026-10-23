@@ -5,18 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.core.view.WindowCompat.enableEdgeToEdge
-import com.ivaespasi.myapplication.components.layouts.Ejer3
-import com.ivaespasi.myapplication.components.layouts.MiButton
-import com.ivaespasi.myapplication.components.layouts.MiCalculadora
-import com.ivaespasi.myapplication.components.layouts.MiState
-import com.ivaespasi.myapplication.components.layouts.MiText
-import com.ivaespasi.myapplication.components.layouts.MiTextField
-import com.ivaespasi.myapplication.components.layouts.MiTextFieldPadre
+import com.ivaespasi.myapplication.components.layouts.Calculadora
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +21,7 @@ class MainActivity : ComponentActivity() {
                 //MiText(Modifier.fillMaxSize().padding(innerPadding))
                 //MiTextFieldPadre(Modifier.fillMaxSize().padding(innerPadding))
                 //MiButton(Modifier.fillMaxSize().padding(innerPadding))
-                MiCalculadora(Modifier.fillMaxSize().padding(innerPadding))
+                Calculadora(Modifier.padding(innerPadding))
             }
         }
     }
