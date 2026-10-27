@@ -11,6 +11,7 @@ composeBom = "2026.09.00"
 constraintVersion = "1.1.2"
 uiGraphics = "1.12.1"
 uiText = "1.12.1"
+coilCompose = "3.6.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,9 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 constraint-layout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintVersion" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "uiGraphics" }
 androidx-compose-ui-text = { group = "androidx.compose.ui", name = "ui-text", version.ref = "uiText" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose"}
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
