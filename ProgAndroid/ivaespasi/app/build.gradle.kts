@@ -57,4 +57,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.constraint.layout)
     implementation("net.objecthunter:exp4j:0.4.8")
+    implementation(libs.lottie.compose)
 }

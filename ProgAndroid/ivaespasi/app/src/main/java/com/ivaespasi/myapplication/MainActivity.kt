@@ -12,6 +12,8 @@ import com.ivaespasi.myapplication.components.layouts.Calculadora
 import com.ivaespasi.myapplication.components.layouts.MiIcono
 import com.ivaespasi.myapplication.components.layouts.MiImagen
 import com.ivaespasi.myapplication.components.layouts.MiImagenDeInternet
+import com.ivaespasi.myapplication.components.layouts.MiProgreso
+import com.ivaespasi.myapplication.components.layouts.ProgresoAnimacion
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +29,10 @@ class MainActivity : ComponentActivity() {
                 //Calculadora(Modifier.padding(innerPadding))
                 //MiImagen()
                 //MiImagenDeInternet()
-                MiIcono()
+                //MiIcono()
+                //MiProgreso()
+                //CargaAnimacion(Modifier.padding(innerPadding))
+                ProgresoAnimacion(Modifier.padding(innerPadding))
             }
         }
     }
