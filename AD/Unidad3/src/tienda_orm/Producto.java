@@ -21,12 +21,26 @@ public class Producto {
     @Column(name = "stock", nullable = false)
     private int stock;
 
+    @OneToOne (
+        mappedBy = "producto",
+        cascade = CascadeType.PERSIST
+    )
+    private FichaTecnica fichaTecnica;
+
     public Producto(){}
 
     public Producto(String n, BigDecimal p, int s){
         this.nombre = n;
         this.precio = p;
         this.stock = s;
+    }
+
+    public void setFichaTecnica(FichaTecnica f){
+        this.fichaTecnica = f;
+    }
+    
+    public void setNombre(String n){
+        this.nombre = n;
     }
 
 }

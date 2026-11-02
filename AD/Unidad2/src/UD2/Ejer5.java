@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.mysql.cj.protocol.Resultset;
+
 public class Ejer5 {
     public static void main(String[] args) {
         String url = "jdbc:mysql://192.168.3.175/banco";
@@ -36,20 +38,29 @@ public class Ejer5 {
                 try {
                     switch (opcion) {
                         case 1:
+                            comprobarAutocommit(conexion);
                             break;
                         case 2:
+                            conexion.setAutoCommit(true);
                             break;
                         case 3:
+                            conexion.setAutoCommit(false);
                             break;
                         case 4:
+                            ingreso(conexion, sc);
                             break;
                         case 5:
+                            retirada(conexion, sc);
                             break;
                         case 6:
+                            consultarSaldo(conexion, sc);
                             break;
                         case 7:
+                            conexion.commit();
+                            System.out.println("Commit realizado correctamente");
                             break;
                         case 0:
+                            System.out.println("Fin del programa");
                             break;
                         default:
                             System.out.println("Opción no válida");
@@ -60,6 +71,87 @@ public class Ejer5 {
             } while (opcion != 0);
         } catch (SQLException e) {
             System.out.println("Error al conectar con MySQL");
+            e.printStackTrace();
+        }
+    }
+
+    private static void comprobarAutocommit(Connection conexion) throws SQLException{
+        if (conexion.getAutoCommit()) {
+            System.out.println("El autocommit está activado");
+        }else{
+            System.out.println("El autocommit está desactivado");
+        }
+    }
+
+    private static void ingreso(Connection conexion, Scanner sc) throws SQLException{
+        System.out.println("Id de la cuenta: ");
+        int id = sc.nextInt();
+        System.out.println("Cantidad a ingresar: ");
+        double cant = sc.nextDouble();
+
+        String sql = "UPDATE cuenta SET saldo = saldo + ? WHERE id = ?";
+
+        try(
+            PreparedStatement sent = conexion.prepareStatement(sql);
+        ) {
+            sent.setDouble(1, cant);
+            sent.setInt(2, id);
+            int filas = sent.executeUpdate();
+
+            if (filas > 0){
+                System.out.println("Ingreso de "+ cant + " € realizada en la cuenta "+ id);
+            }else{
+                System.out.println("No existe ninguna cuenta con id "+ id);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void retirada(Connection conexion, Scanner sc) throws SQLException {
+        System.out.println("Id de la cuenta: ");
+        int id = sc.nextInt();
+        System.out.println("Cantidad a ingresar: ");
+        double cant = sc.nextDouble();
+
+        String sql = "UPDATE cuenta SET saldo = saldo - ? WHERE id = ?";
+
+        try (
+            PreparedStatement sent = conexion.prepareStatement(sql);
+        ){
+            sent.setDouble(1, cant);
+            sent.setInt(2, id);
+            int filas = sent.executeUpdate();
+
+            if (filas > 0){
+                System.out.println("Retirada de "+ cant +" € realizada en la cuenta "+ id);
+            }else{
+                System.out.println("No existe ninguna cuenta con id "+ id);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void consultarSaldo(Connection conexion, Scanner sc) throws SQLException{
+        System.out.println("Id de la cuenta: ");
+        int id = sc.nextInt();
+
+        String sql = "SELECT saldo FROM cuenta WHERE id = ?";
+
+        try (
+            PreparedStatement sent = conexion.prepareStatement(sql);
+        ){
+            sent.setInt(1, id);
+            ResultSet rs = sent.executeQuery();
+
+            if (rs.next()){
+                double saldo = rs.getDouble("saldo");
+                System.out.println("Saldo de la cuenta "+ id +": "+ saldo + " €");
+            }else{
+                System.out.println("No existe ninguna cuenta con id "+ id);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
