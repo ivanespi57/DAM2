@@ -1,9 +1,6 @@
-package editorial;
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import editorial.FichaBibliografica;
+import editorial.Libro;
+import jakarta.persistence.*;
 
 /**
  * Ejer2_repaso: libros y fichas bibliográficas (@OneToOne bidireccional).

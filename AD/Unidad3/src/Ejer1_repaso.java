@@ -1,11 +1,12 @@
-public class Ejer1_repaso {
-    
-}
-package clinica;
+
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import clinica.Animal;
+import clinica.Consulta;
+import clinica.Propietario;
+import clinica.Veterinario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
