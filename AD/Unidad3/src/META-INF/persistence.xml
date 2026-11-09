@@ -1,24 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence"
     version="3.1">
+
+    <!-- ================= TU TIENDA (la que ya tenías) ================= -->
     <persistence-unit name="TIENDA_ORM_PU" transaction-type="RESOURCE_LOCAL">
         <provider>
             org.hibernate.jpa.HibernatePersistenceProvider
         </provider>
-        <!-- Entidades gestionadas por esta unidad de persistencia -->
-        <!-- Aquí colocaremos las clases que convertiremos en tablas -->
         <class>tienda_orm.Producto</class>
         <class>tienda_orm.FichaTecnica</class>
         <properties>
-            <!-- Datos de conexión con MySQL -->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.175:3306/tienda_orm"/>
             <property name="jakarta.persistence.jdbc.user" value="ivan"/>
             <property name="jakarta.persistence.jdbc.password" value="ivan"/>
-            <!-- Configuración de Hibernate -->
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
+
+    <!-- ================= EJERCICIO 1: clínica veterinaria ================= -->
+    <persistence-unit name="PU_CLINICA_VETERINARIA" transaction-type="RESOURCE_LOCAL">
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+        <class>clinica.Propietario</class>
+        <class>clinica.Animal</class>
+        <class>clinica.Veterinario</class>
+        <class>clinica.Consulta</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.175:3306/clinica_veterinaria"/>
+            <property name="jakarta.persistence.jdbc.user" value="ivan"/>
+            <property name="jakarta.persistence.jdbc.password" value="ivan"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+
+    <!-- ================= EJERCICIO 2: libros y fichas ================= -->
+    <persistence-unit name="PU_EDITORIAL" transaction-type="RESOURCE_LOCAL">
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+        <class>editorial.Libro</class>
+        <class>editorial.FichaBibliografica</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.175:3306/editorial"/>
+            <property name="jakarta.persistence.jdbc.user" value="ivan"/>
+            <property name="jakarta.persistence.jdbc.password" value="ivan"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+
+    <!-- ================= EJERCICIO 3: academia de formación ================= -->
+    <persistence-unit name="PU_ACADEMIA" transaction-type="RESOURCE_LOCAL">
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+        <class>academia.Alumno</class>
+        <class>academia.Expediente</class>
+        <class>academia.Curso</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.175:3306/academia_formacion"/>
+            <property name="jakarta.persistence.jdbc.user" value="ivan"/>
+            <property name="jakarta.persistence.jdbc.password" value="ivan"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+
 </persistence>
