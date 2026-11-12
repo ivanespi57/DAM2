@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
                 //MiListaRadioButton(modifier = Modifier.padding(innerPadding))
                 //MiRangeSlider(modifier = Modifier.padding(innerPadding))
                 //MiDropDownMenu(modifier = Modifier.padding(innerPadding))
-                MiExposedDropDownMenu(modifier = Modifier.padding(innerPadding))
+                //MiExposedDropDownMenu(modifier = Modifier.padding(innerPadding))
             }
         }
     }
