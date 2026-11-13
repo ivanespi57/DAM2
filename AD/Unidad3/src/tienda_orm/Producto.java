@@ -1,6 +1,8 @@
 package tienda_orm;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -26,6 +28,18 @@ public class Producto {
         cascade = CascadeType.PERSIST
     )
     private FichaTecnica fichaTecnica;
+
+    @OneToMany
+    @JoinColumn (name = "id_categoria", nullable = false)
+    private Categoria categoria;
+
+    @ManyToMany 
+    @JoinTable (
+        name = "producto_label", 
+        joinColumns = @JoinColumn (name = "id_producto"), 
+        inverseJoinColumns = @JoinColumn (name = "id_label")
+    )
+    private Set<Label> etiquetas = new HashSet<>();
 
     public Producto(){}
 
