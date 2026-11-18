@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.List;
 
 import jakarta.persistence.*;
 import tienda_orm.FichaTecnica;
@@ -11,6 +12,18 @@ public class App {
         EntityManagerFactory emf  = Persistence.createEntityManagerFactory("TIENDA_ORM_PU");
         EntityManager em = emf.createEntityManager();
         //EntityTransaction tx = em.getTransaction();
+
+        Producto p = em.createQuery("SQL", Producto.class).getSingleResult();
+
+        String sql = "SELECT p FROM Producto p WHERE p.precio = :precio";
+        List<Producto> listaP = em.createNativeQuery(sql, Producto.class)
+        .setParameter("precio", 25.49)
+        .getResultList();
+
+        String sql2 = "SELECT * FROM producto WHERE precio = precio";
+        List<Producto> lista = em.createNativeQuery(sql2, Producto.class)
+        .setParameter("precio", 25.49)
+        .getResultList();
 
         em.close();
         
