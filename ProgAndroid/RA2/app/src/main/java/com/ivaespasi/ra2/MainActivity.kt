@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.ivaespasi.ra2.components.layouts.FormularioPadre
+import com.ivaespasi.ra2.components.layouts.PedidoPadreComida
 import com.ivaespasi.ra2.ui.theme.RA2Theme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             RA2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    FormularioPadre(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    //FormularioPadre(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    PedidoPadreComida(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 }
             }
         }

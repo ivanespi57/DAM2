@@ -27,12 +27,9 @@ public class Animal {
     @Column(name = "raza", length = 50)
     private String raza;
 
-    // El atributo Java es fechaNacimiento, pero la columna se llama fecha_nacimiento
-    // nullable = true es el valor por defecto: puede ser nulo
     @Column(name = "fecha_nacimiento", nullable = true)
     private LocalDate fechaNacimiento;
 
-    // precision = nº total de dígitos, scale = nº de decimales
     @Column(name = "peso", precision = 6, scale = 2)
     private BigDecimal peso;
 
