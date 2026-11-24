@@ -14,6 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.ivaespasi.ra2.components.layouts.FormularioPadre
 import com.ivaespasi.ra2.components.layouts.PedidoPadreComida
 import com.ivaespasi.ra2.ui.theme.RA2Theme
+import com.ivaespasi.ra2.up6.AppConParametros
+import com.ivaespasi.ra2.up6.AppConRutasConstantes
+import com.ivaespasi.ra2.up6.NavegacionBasica
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +26,10 @@ class MainActivity : ComponentActivity() {
             RA2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     //FormularioPadre(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                    PedidoPadreComida(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    //PedidoPadreComida(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    //NavegacionBasica(modifier = Modifier.padding(innerPadding))
+                    //AppConParametros(modifier = Modifier.padding(innerPadding))
+                    AppConRutasConstantes(modifier = Modifier.padding(innerPadding))
                 }
             }
         }

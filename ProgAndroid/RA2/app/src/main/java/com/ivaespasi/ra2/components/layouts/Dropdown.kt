@@ -104,7 +104,6 @@ fun MiExposedDropDownMenu(modifier: Modifier = Modifier) {
             readOnly = true,
             label = { Text("Módulos") },
             modifier = Modifier
-                .menuAnchor()
                 .fillMaxWidth(),
             trailingIcon = {
                 ExposedDropdownMenuDefaults.TrailingIcon(expandido)

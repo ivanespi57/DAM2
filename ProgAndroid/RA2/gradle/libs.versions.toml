@@ -13,6 +13,7 @@ uiGraphics = "1.12.1"
 uiText = "1.12.1"
 coilCompose = "3.6.3"
 lottie = "6.7.1"
+navigationCompose = "2.9.0"
 
 
 [libraries]
@@ -36,9 +37,9 @@ androidx-compose-ui-text = { group = "androidx.compose.ui", name = "ui-text", ve
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose"}
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
