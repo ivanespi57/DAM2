@@ -4,8 +4,6 @@
   <persistence-unit name="PAIPORTEATS_PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-    <!-- Aquí irán las entidades, una línea por clase -->
-
     <properties>
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.175:3306/paiporteats"/>
